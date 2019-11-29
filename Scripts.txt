@@ -1,0 +1,17 @@
+create table trip_info(
+   trip_id INT NOT NULL AUTO_INCREMENT,
+   emp_name VARCHAR(100),
+   emp_mobile INT,
+   cust_name VARCHAR(100),
+   cust_mobile INT,
+   source VARCHAR(100),
+   destination VARCHAR(100),
+   pickup_time DATE,
+   drop_time DATE,
+   PRIMARY KEY ( trip_id )
+);
+
+insert into trip_info values (1,'Joey',8080808080,'Chandler',9090909090,'Megapolis','Shivaji Chowk','2019-09-10 06:20:00','2019-09-10 07:05:00');
+
+ALTER TABLE trip_info
+ALTER COLUMN cust_mobile BIGINT;

@@ -1,0 +1,10 @@
+<div class="sidebar">    
+    <a routerLinkActive="active">Logged In As: {{name}}</a>
+    <a routerLink="/bookride" *ngIf="roles == 'cust' || roles == 'admin'" routerLinkActive="active">Book A Ride</a>
+    <a routerLink="/trip" routerLinkActive="active">Your Trips</a>
+    <a routerLink="/help" routerLinkActive="active">Help</a>
+    <a routerLink="/settings" routerLinkActive="active">Settings</a>
+    <a routerLink="/about" routerLinkActive="active">About Us</a>
+    <a (click)='logout()' routerLinkActive="active">Logout</a>
+</div>
+  

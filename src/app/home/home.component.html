@@ -1,0 +1,124 @@
+<!-- Navbar -->
+<div style="background:black; text-align: center;">
+  <h1
+    style="color: white; font-family:Verdana, Geneva, Tahoma, sans-serif; margin-bottom: 0; min-height: 70px; line-height: 150%;">
+    One solution for all your travel needs..
+  </h1>
+</div>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center" style="min-height: 600px;">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Gear-Ride</h2>
+      <h5 class="margin" style="font-family: cursive">Everyone's Private Driver</h5>
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://car-images.bauersecure.com/pagefiles/84674/2019bmwi8-roadster-01.jpg" alt="Los Angeles"
+              class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="600" height="350">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278__340.jpg" alt="Chicago"
+              class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="600" height="350">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/911-road-3629a.jpg?itok=m6x23Go0"
+              alt="New York" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="600"
+              height="350">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+    </div>
+    <div class="col-md-6 center" style="min-height: 50vh;">
+      <h3>Log In to ride/offer ride</h3><br>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="home" class="container tab-pane active">
+          <form name="loginform" (ngSubmit)="f.form.valid && onSubmitLogin()" #f="ngForm" novalidate>
+            <div class="form-group">
+              <label for="username">UserName</label>
+              <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel" placeholder="Enter your contact number"
+                required />
+              <div *ngIf="f.submitted && username.invalid">
+                <div *ngIf="username.errors.required">Username is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" [(ngModel)]="form.password" placeholder="Enter your password"
+                #password="ngModel" required minlength="6" />
+              <div *ngIf="f.submitted && password.invalid">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary">Login</button>
+              <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+                Login failed: {{errorMessage}}
+              </div>
+            </div>
+          </form>
+          <hr />
+          <p>Don't have an account?&nbsp;<a href="register" > Sign Up Here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h1 class="margin">What's it about?</h1>
+  <p>Good things happen when people can move, whether across town or towards their dreams.
+    Opportunities appear, open up, become reality.
+    What started as a way to tap a button to get a ride has led to billions of moments of human connection
+    as people around the world go all kinds of places in all kinds of ways with the help of our technology.</p>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+  <h1 class="margin">What rides are on offer?</h1><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Cars</h2>
+      <img src="https://www.autoblog.com/img/research/styles/photos/performance.jpg" class="img-responsive margin"
+        style="width:70%;" alt="Image">
+    </div>
+    <div class="col-sm-4">
+      <h2>Bikes</h2>
+      <img src="http://im.rediff.com/getahead/2018/jul/06kawasaki-ninja-h2.jpg" class="img-responsive margin"
+        style="width:70%" alt="Image">
+    </div>
+    <div class="col-sm-4">
+      <h2>Autos</h2>
+      <img src="https://www.olacabs.com/webstatic/img/fleet-image/auto.png" class="img-responsive margin"
+        style="width:70%" alt="Image">
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>An application developed by <a href="https://facebook.com/rishavjha2611">Rishav Jha</a></p>
+</footer>

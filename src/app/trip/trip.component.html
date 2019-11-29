@@ -1,0 +1,35 @@
+
+    <div class="content" >
+        
+        <h2>Trip Information</h2>
+        <input class="form-control" id="myInput" (keypress)="filter()" type="text" placeholder="Search for anything.." style="margin-bottom: 15px;">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" *ngIf="roles == 'cust' || roles == 'admin'">Driver's Name</th>
+                <th scope="col" *ngIf="roles == 'cust' || roles == 'admin'">Driver's Contact</th>
+                <th scope="col" *ngIf="roles == 'emp' || roles == 'admin'">Rider's Name</th>
+                <th scope="col" *ngIf="roles == 'emp' || roles == 'admin'">Rider's Contact</th>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">PickUp Time</th>
+                <th scope="col">Drop Time</th>
+            </tr>
+            </thead>
+            <tbody id="myTable">
+            <tr *ngFor="let trip of trips">
+                <td>{{ trip.tripId }}</td>
+                <td *ngIf="roles == 'cust' || roles == 'admin'">{{ trip.empName }}</td>
+                <td *ngIf="roles == 'cust' || roles == 'admin'">{{ trip.empMobile }}</td>
+                <td *ngIf="roles == 'emp' || roles == 'admin'">{{ trip.custName }}</td>
+                <td *ngIf="roles == 'emp' || roles == 'admin'">{{ trip.custMobile }}</td>
+                <td>{{ trip.source }}</td>
+                <td>{{ trip.destination }}</td>
+                <td>{{ trip.pickupTime }}</td>
+                <td>{{ trip.dropTime }}</td>
+            </tr>
+            </tbody>
+        </table>
+        
+    </div>

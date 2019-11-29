@@ -1,0 +1,77 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+        
+    </div>
+    <div class="col-md-4" style="margin-top: 50px;">
+        <h2>Gear-Ride</h2>
+        <h5 class="margin" style="font-family: cursive">Everyone's Private Driver</h5>
+      <div style="margin-top: 70px;">
+      <h5>Enter below details to create account:</h5>
+      <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" ng-init="form.role=admin" novalidate>
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="form.name" #name="ngModel" placeholder="What do we call you?" required />
+          <div *ngIf="f.submitted && name.invalid" class="error">
+            <div *ngIf="name.errors.required">Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username">Mobile Number</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel" placeholder="This will be your user Id"
+          required minlength="10" required maxlength="10" pattern="^[0-9]+(?:\.[0-9]+)?$" required />
+          <div *ngIf="f.submitted && username.invalid" class="error">
+            <div *ngIf="username.errors.required">Mobile number is required.</div>
+            <div *ngIf="username.errors.minlength">Please enter a valid Mobile Number.</div>
+            <div *ngIf="username.errors.maxlength">Please enter a valid Mobile Number.</div>
+            <div *ngIf="username.errors.pattern">Please enter a valid Mobile Number.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" placeholder="abc@example.com" required
+            email />
+          <div *ngIf="f.submitted && email.invalid" class="error">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel" placeholder="Minimum 6 characters"
+            required minlength="6" />
+          <div *ngIf="f.submitted && password.invalid" class="error">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+        </div>
+        <div class="form-group" >
+          <label for="name">Who are you?<br>
+            <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="role" [(ngModel)]="form.role" value="emp" #name="ngModel" />A ride giver
+          </div>
+          <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="role" [(ngModel)]="form.role" value="cust" #name="ngModel" />A ride taker
+          </div>
+          </label>
+          <div *ngIf="f.submitted && name.invalid" class="error">
+              <div *ngIf="name.errors.required">This field is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success">Register</button>
+          <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+            Signup failed!<br />{{errorMessage}}
+          </div>
+        </div>
+        
+        
+      </form>
+    </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+</div>
